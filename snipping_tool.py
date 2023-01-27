@@ -8,7 +8,7 @@ from plyer import notification
 from ocr import ocr_space_file
 
 
-class MyWidget(QtWidgets.QWidget):
+class snipping_tool(QtWidgets.QWidget):
     def __init__(self):
         super().__init__()
         self.setWindowTitle(" ")
@@ -61,13 +61,20 @@ class MyWidget(QtWidgets.QWidget):
         output_pixmap.save("capture.png")
         copy_to_clipboard()
         send_windows_notification()
-        # self.label = QtWidgets.QLabel(pixmap=output_pixmap)
-        # self.label.show()
+        remove_capture()
+        sys.exit()
 
 
 def send_to_ocr():
-    test_file = ocr_space_file(filename=f'./capture.png', language='eng')
-    return test_file
+    image_to_convert = ocr_space_file(filename=f'./capture.png', language='eng')
+    return image_to_convert
+
+
+def remove_capture():
+    try:
+        os.remove('./capture.png')
+    except Exception as ex:
+        print(f"Error deleting capture: {ex}")
 
 
 def copy_to_clipboard():
@@ -80,7 +87,6 @@ def send_windows_notification():
         message="and copied to clipboard!",
         timeout=2
     )
-    sys.exit()
 
 
 if __name__ == "__main__":
