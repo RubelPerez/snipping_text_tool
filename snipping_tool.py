@@ -5,7 +5,7 @@ import pyperclip
 from PyQt5 import QtCore, QtGui, QtWidgets
 from plyer import notification
 
-from ocr import ocr_space_file
+from utils.ocr import ocr_space_file
 
 
 class snipping_tool(QtWidgets.QWidget):
@@ -66,13 +66,13 @@ class snipping_tool(QtWidgets.QWidget):
 
 
 def send_to_ocr():
-    image_to_convert = ocr_space_file(filename=f'./capture.png', language='eng')
+    image_to_convert = ocr_space_file(filename=f'capture.png', language='eng')
     return image_to_convert
 
 
 def remove_capture():
     try:
-        os.remove('./capture.png')
+        os.remove('capture.png')
     except Exception as ex:
         print(f"Error deleting capture: {ex}")
 
@@ -91,7 +91,7 @@ def send_windows_notification():
 
 if __name__ == "__main__":
     app = QtWidgets.QApplication(sys.argv)
-    window = MyWidget()
+    window = snipping_tool()
     window.show()
     app.aboutToQuit.connect(app.deleteLater)
     app.setQuitOnLastWindowClosed(False)
