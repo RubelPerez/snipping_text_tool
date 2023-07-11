@@ -14,7 +14,7 @@ jobs:
         password: ${{ secrets.PASSWORD }}
         port: ${{ secrets.PORT }}
         script: | 
-          cd /home/repos
+          cd /home/repo
           rm -rf snipping_text_tool
           git clone https://github.com/RubelPerez/snipping_text_tool.git -b main
           cd snipping_text_tool
