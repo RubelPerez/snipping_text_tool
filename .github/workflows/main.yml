@@ -18,4 +18,5 @@ jobs:
           rm -rf snipping_text_tool
           git clone https://github.com/RubelPerez/snipping_text_tool.git -b main
           cd snipping_text_tool
+          "${{ github.event.repository.name }}" > hola.txt
           echo "hello world" > nota.txt
