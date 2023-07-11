@@ -21,5 +21,7 @@ jobs:
       run: | 
         ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} 
         mkdir hola
+        cd hola 
+        pwd
     - name: cleanup
       run: rm -rf ~/.ssh
