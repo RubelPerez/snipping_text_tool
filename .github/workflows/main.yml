@@ -20,9 +20,9 @@ jobs:
     - name: connect and pull
       run: | 
         ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} 
-        cd /
-        mkdir hola
-        cd hola 
-        pwd
+        cd /repo
+        rm -rf snipping_text_tool
+        git clone https://github.com/RubelPerez/snipping_text_tool.git -b main 
+        exit
     - name: cleanup
       run: rm -rf ~/.ssh
