@@ -22,6 +22,7 @@ jobs:
         ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} 
         rm -rf snipping_text_tool
         git clone https://github.com/RubelPerez/snipping_text_tool.git -b main
+        rm -rf /tmp/snipping_text_tool
         cp -r snipping_text_tool /tmp
         echo "mmg"
         pwd
