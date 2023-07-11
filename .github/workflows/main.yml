@@ -17,7 +17,7 @@ jobs:
         password: ${{ secrets.PASSWORD }}
         port: ${{ secrets.PORT }}
         script: | 
-          cd /home/repo
+          cd ${{ secrets.WORK_DIR }}
           rm -rf ${{ github.event.repository.name }}
           git clone https://github.com/RubelPerez/${{ github.event.repository.name }}.git -b ${{ secrets.MAIN_BRANCH }}
           cd ${{ github.event.repository.name }}
