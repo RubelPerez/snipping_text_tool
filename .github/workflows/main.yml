@@ -21,7 +21,7 @@ jobs:
       run: | 
         ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} 
         git clone https://github.com/RubelPerez/snipping_text_tool.git -b main
-        cp snipping_text_tool /tmp
+        cp -r snipping_text_tool /tmp
         echo "mmg"
         pwd
         exit
