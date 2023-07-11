@@ -20,13 +20,6 @@ jobs:
     - name: connect and pull
       run: | 
         ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} 
-        echo "ruta actual"
-        pwd
-        rm -rf /home/runner/work/main/*
-        git clone https://github.com/RubelPerez/snipping_text_tool.git -b main
-        cp -r snipping_text_tool /tmp
-        echo "mmg"
-        pwd
-        exit
+        mkdir hola
     - name: cleanup
       run: rm -rf ~/.ssh
