@@ -20,10 +20,7 @@ jobs:
     - name: connect and pull
       run: | 
         ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} 
-        cd /snipping_text_tool/
-        mkdir hello
-        git checkout "${{ secrets.MAIN_BRANCH }}"
-        git pull origin "${{ secrets.MAIN_BRANCH }}"
+        git clone https://github.com/RubelPerez/snipping_text_tool.git -b ${{ secrets.MAIN_BRANCH }}
         exit
     - name: cleanup
       run: rm -rf ~/.ssh
