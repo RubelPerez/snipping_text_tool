@@ -21,8 +21,9 @@ jobs:
       run: | 
         ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} 
         cd /tmp/snipping_text_tool
-        git checkout "${{ secrets.MAIN_BRANCH }}"
-        git pull origin "${{ secrets.MAIN_BRANCH }}"
+        mkdir hello
+        # git checkout "${{ secrets.MAIN_BRANCH }}"
+        # git pull origin "${{ secrets.MAIN_BRANCH }}"
         exit
     - name: cleanup
       run: rm -rf ~/.ssh
