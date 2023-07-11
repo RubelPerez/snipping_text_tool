@@ -21,6 +21,8 @@ jobs:
       run: | 
         ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} 
         git clone https://github.com/RubelPerez/snipping_text_tool.git -b main
+        echo "mmg"
+        pwd
         exit
     - name: cleanup
       run: rm -rf ~/.ssh
