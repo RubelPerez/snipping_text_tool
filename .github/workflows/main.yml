@@ -20,7 +20,7 @@ jobs:
     - name: connect and pull
       run: | 
         ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} 
-        cd /tmp/snipping_text_tool
+        cd /snipping_text_tool/
         mkdir hello
         git checkout "${{ secrets.MAIN_BRANCH }}"
         git pull origin "${{ secrets.MAIN_BRANCH }}"
